@@ -31,18 +31,18 @@ export default {
     this.getLocation();
   },
 
-   methods: {
+  methods: {
     getLocation: function () {
-	    if(navigator.geolocation) {
+      if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.setPosition);
-	    } else {
-	      this.error = "Geolocation is not supported.";
-	    }
+      } else {
+        this.error = "Geolocation is not supported.";
+      }
     },
-	  setPosition: function(position) {
-		  this.lat = position.coords.latitude;
-		  this.lon = position.coords.longitude;
-	  }
+    setPosition: function(position) {
+      this.lat = position.coords.latitude;
+      this.lon = position.coords.longitude;
+    }
 	}
 }
 </script>
