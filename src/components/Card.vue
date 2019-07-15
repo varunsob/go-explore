@@ -5,7 +5,7 @@
         {{ venue.venue.categories[0].name }}
     </div>
     <div class="venue-details">
-      <label class="venue-title">{{ venue.venue.name }}</label><br/>
+      <label class="venue-title">{{ venue.venue.name.substring(0, 50) }}</label><br/>
       <label class="venue-distance">{{ (venue.venue.location.distance / 1000).toFixed(2) }} Kms</label>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
     return {
       imgUrl: null,
       Keys: Keys,
-      URLs: URLs,
+      URLs: URLs
     }
   },
 
