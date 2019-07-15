@@ -1,7 +1,7 @@
 <template>
   <div class="filters">
     <FilterCard v-on:click.native="filterResults('All')" label="All"
-      imgUrl="https://fastly.4sqi.net/img/general/original/13764780_Ao02DfJpgG1ar2PfgP51hOKWsn38iai8bsSpzKd0GcM.jpg" />
+      imgUrl="https://raw.githubusercontent.com/varunsob/go-explore/master/src/assets/all.png" />
     <FilterCard v-on:click.native="filterResults('Parks')" label="Parks"
       imgUrl="https://raw.githubusercontent.com/varunsob/go-explore/master/src/assets/park.png" />
     <FilterCard v-on:click.native="filterResults('Bars')" label="Bars"
