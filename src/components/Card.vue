@@ -2,16 +2,18 @@
   <div class="card">
     <img class="bg-img" :src="imgUrl" />
     <div class="category-label">
-        {{venue.venue.categories[0].name}}
+        {{ venue.venue.categories[0].name }}
     </div>
     <div class="venue-details">
-      <label class="venue-title">{{venue.venue.name}}</label><br/>
-      <label class="venue-distance">{{(venue.venue.location.distance / 1000).toFixed(2) }} Kms</label>
+      <label class="venue-title">{{ venue.venue.name }}</label><br/>
+      <label class="venue-distance">{{ (venue.venue.location.distance / 1000).toFixed(2) }} Kms</label>
     </div>
   </div>
 </template>
 
-<script>
+<script scoped>
+import { Keys } from '../constants/keys.js'
+import { URLs } from '../constants/urls.js'
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
@@ -27,6 +29,8 @@ export default {
   data() {
     return {
       imgUrl: null,
+      Keys: Keys,
+      URLs: URLs,
     }
   },
 
@@ -36,7 +40,7 @@ export default {
 
   methods: {
     fetchVenueImage() {
-      Vue.http.get('https://api.foursquare.com/v2/venues/'+ this.venue.venue.id +'/photos?client_id=Z1HSHTJQLY4XT3YXGXJJNPWUFPJHPZDUJAE3LMFKXUPS0UJ3&client_secret=LYSNFZR5UBCE433BFKAHQXULOHRQYP1LEYQWBX5QHF5235ED&v=20190714')
+      Vue.http.get(URLs.VENUE_PHOTOS + this.venue.venue.id +'/photos?client_id=' + Keys.CLIENT_ID + '&client_secret=' + Keys.CLIENT_SECRET + '&v=20190714')
       .then(response => {
         this.imgUrl = response.data.response.photos.items[0].prefix + "512" + response.data.response.photos.items[0].suffix;
       })
@@ -52,11 +56,10 @@ export default {
 <style scoped>
 .bg-img {
   background: #efefef;
+  border-radius: 3px;
   height: 150px;
   object-fit: cover;
-  opacity: 0.8;
   width: 100%;
-  
 }
 .card {
   display: inline-block;
@@ -67,6 +70,8 @@ export default {
 }
 .category-label {
   background-color: #fff;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
   font-size: 10px;
   font-weight: 600;
   padding: 4px 8px;
@@ -79,10 +84,11 @@ export default {
   top: 0;
 }
 .venue-details {
-  /* background-color: #efefef; */
   background: linear-gradient(45deg, #fff 0%, transparent 100%);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   bottom: 0;
-  height: 35px;
+  height: 40px;
   position: absolute;
   text-align: left;
   width: 100%;
