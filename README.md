@@ -5,6 +5,9 @@ Go-Explore is a web application to show a list of available venues based on user
 Foursquare APIs are used here to fetch the venue information.
 
 This version is an MVP and is best viewed on a mobile device.
+
+Note: Foursquare API for fetching venue images has been used but the API hits ratelimits frequently. This will then show the default fallback image for each venue. The limits will reset every 24hours.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
