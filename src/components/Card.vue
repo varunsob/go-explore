@@ -14,6 +14,7 @@
 <script scoped>
 import { Keys } from '../constants/keys.js'
 import { URLs } from '../constants/urls.js'
+
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
