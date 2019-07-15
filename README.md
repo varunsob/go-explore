@@ -1,7 +1,10 @@
 # Go-Explore
 
-Go-Explore is a web application to show a list of available venues based on user's current location. Foursquare APIs are used here to fetch nearby venues.
+Go-Explore is a web application to show a list of available venues based on user's current location. User can view the distance of venue from his/her current location and filter basis pre-defined categories such as Cafés, Theaters, Parks etc.
 
+Foursquare APIs are used here to fetch the venue information.
+
+This version is an MVP and is best viewed on a mobile device.
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -30,7 +33,7 @@ npm run lint
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+TODO: Implement tests and explain usage for the same
 
 ```
 npm run test
@@ -40,14 +43,6 @@ npm run test
 ### Break down into end to end tests
 
 TODO: What these tests test and why
-
-```
-TODO: an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
 
 ```
 TODO: an example
