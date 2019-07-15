@@ -1,6 +1,7 @@
 <template>
   <div class="header">
     <img class="logo" alt="Explore" src="../assets/logo.png">
+    <div class="title">Go Explore</div>
   </div>
 </template>
 
@@ -19,7 +20,15 @@ export default {
   height: 50px;
 }
 .logo {
+  float: left;
   margin: 9px 0 0 10px;
   width: 32px;
+}
+.title {
+  color: #fff;
+  float: left;
+  font-size: 18px;
+  margin: 15px 0 0 15px;
+  top: 0;
 }
 </style>
