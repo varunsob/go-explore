@@ -23,7 +23,7 @@ export default {
   display: inline-block;
 }
 .card-border {
-  border: 1px solid rgb(224, 224, 224);
+  border: 1px solid #fff;
   border-radius: 50%;
 }
 .card-bg {
